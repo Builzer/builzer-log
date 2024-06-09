@@ -23,7 +23,7 @@ jobs:
             --document-name "AWS-RunShellScript" \
             --targets "Key=tag:Name,Values=BuilzerLogApp-dev" \
             --parameters 'commands=#!/bin/bash
-            curl -o docker-compose.dev.yml https://raw.githubusercontent.com/Builzer/builzer-log/master/dockerfiles/docker-compose.dev.yml
+            curl -o docker-compose.dev.yml -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" https://raw.githubusercontent.com/Builzer/builzer-log/master/dockerfiles/docker-compose.dev.yml
             docker-compose -f docker-compose.dev.yml up -d'  \
             --comment "Deploying Docker container to EC2 via SSM" \
             --timeout-seconds 600
