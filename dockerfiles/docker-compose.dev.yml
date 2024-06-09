@@ -8,7 +8,7 @@ services:
     container_name: elastic-search
     environment:
       - node.name=single-node
-      - cluster.name=dailyon
+      - cluster.name=builzer
       - discovery.type=single-node
     ports:
       - 9200:9200
