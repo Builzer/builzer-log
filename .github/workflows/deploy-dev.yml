@@ -23,6 +23,7 @@ jobs:
             --document-name "AWS-RunShellScript" \
             --targets "Key=tag:Name,Values=BuilzerLogApp-dev" \
             --parameters "commands='#!/bin/bash
+            rm -rf builzer-log
             git clone https://CokeLee777:${{ secrets.GIT_ACCESS_TOKEN }}@github.com/Builzer/builzer-log.git
             cd builzer-log
             docker-compose up setup
